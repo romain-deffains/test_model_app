@@ -2,11 +2,10 @@ checkout=0
 user="Dowwind"
 pass="Dowwind15011997"
 
-git branch > bite
+git branch > branch_list
 while read line
 do
     $checkout=0
-    echo $line
     for letter in $line
     do
 	if [ $letter = '*' ]
@@ -23,5 +22,5 @@ do
 	git push origin $line
 	git checkout master
     fi
-done < bite
-rm bite
+done < branch_list
+rm branch_list
