@@ -23,7 +23,7 @@ do
     then
 	line=$(trim "$line")
     	git checkout $line
-    	git pull origin master
+    	git merge origin master
     	git add .
     	git commit -m "Rebase branch"
     	git push origin $line
