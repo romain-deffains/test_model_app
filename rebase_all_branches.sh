@@ -7,7 +7,7 @@ trim() {
   echo "$s"
 }
 
-echo "REBASE ALL BRANCHES FROM MASTER"
+echo -e "\n\033[35;1mREBASE ALL BRANCHES FROM MASTER\n"
 
 old_IFS=$IFS
 IFS=$'\n'
@@ -24,15 +24,15 @@ do
     if [ $checkout = 0 ]
     then
 	line=$(trim "$line")
-	echo "\nGoing to branch $line ."
+	echo -e "\n\033[33;1mGoing to branch $line.\033[0m"
     	git checkout $line
     	git pull --no-commit -q origin master
     	git add .
     	git commit -q -m "Rebase branch"
     	git push origin $line
-	echo "Going to branch master.\n"
+	echo -e "\033[33;1mGoing to branch master.\n\033[0m\n"
     	git checkout master
     fi
 done
 rm -f branch_list
-echo "REBASE DONE"
+echo -e "\n\n\033[35;1mREBASE DONE\033[0m"
