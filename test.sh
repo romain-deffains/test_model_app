@@ -7,7 +7,7 @@ while read line
 do
     $checkout=0
     echo $line
-    for letter in line
+    for letter in $line
     do
 	if [ $letter = '*' ]
 	then
