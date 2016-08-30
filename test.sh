@@ -2,7 +2,7 @@ checkout=0
 user="Dowwind"
 pass="Dowwind15011997"
 
-
+git branch > bite
 while read line
 do
     $checkout=0
@@ -28,3 +28,4 @@ do
 	git checkout master
     fi
 done < bite
+rm bite
