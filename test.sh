@@ -23,9 +23,9 @@ do
     then
 	line=$(trim "$line")
     	git checkout $line
-    	git pull --no-commit origin master
+    	git pull --no-commit -q origin master
     	git add .
-    	git commit -m "Rebase branch"
+    	git commit -q -m "Rebase branch"
     	git push origin $line
     	git checkout master
     fi
