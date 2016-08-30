@@ -7,6 +7,7 @@ do
     echo $line
     for letter in $line
     do
+	echo $letter
 	if [ $letter = '*' ]
 	then
 	    $checkout=1
