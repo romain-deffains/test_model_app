@@ -1,16 +1,16 @@
-checkout=0
+set checkout
 
 git branch > branch_list
 while read line
 do
-    $checkout=0
+    checkout=0
     echo $line
     for letter in $line
     do
 	echo $letter
 	if [ $letter = '*' ]
 	then
-	    $checkout=1
+	    checkout=1
 	fi
     done
     if [ $checkout = 0 ]
