@@ -1,5 +1,12 @@
 #!/bin/bash
 
+trim() {
+  local s2 s="$*"
+  until s2="${s#[   ]}"; [ "$s2" = "$s" ]; do s="$s2"; done
+  until s2="${s%[   ]}"; [ "$s2" = "$s" ]; do s="$s2"; done
+  echo "$s"
+}
+
 old_IFS=$IFS
 IFS=$'\n'
 set checkout
@@ -14,6 +21,7 @@ do
     fi
     if [ $checkout = 0 ]
     then
+	line=$(trim "$line")
     	git checkout $line
     	git pull origin master
     	git add .
