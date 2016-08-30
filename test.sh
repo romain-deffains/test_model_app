@@ -18,13 +18,13 @@ do
     if [ $checkout = 0 ]
     then
 	echo "Commande git.\n"
-	git checkout line
+	git checkout $line
 	git pull origin master
 	git add .
 	git commit -m "Rebase branch"
 	send "$user"
 	send "$pass"
-	git push origin line
+	git push origin $line
 	git checkout master
     fi
 done < bite
