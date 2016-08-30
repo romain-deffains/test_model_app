@@ -4,7 +4,7 @@ git branch > branch_list
 while read line
 do
     $checkout=0
-    echo %line
+    echo $line
     for letter in $line
     do
 	if [ $letter = '*' ]
