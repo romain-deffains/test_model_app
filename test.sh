@@ -1,4 +1,7 @@
 checkout=0
+user="Dowwind"
+pass="Dowwind15011997"
+
 
 while read line
 do
@@ -19,6 +22,8 @@ do
 	git pull origin master
 	git add .
 	git commit -m "Rebase branch"
+	send "$user"
+	send "$pass"
 	git push origin line
 	git checkout master
     fi
